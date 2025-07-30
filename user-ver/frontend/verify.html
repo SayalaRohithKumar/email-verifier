@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<htm=>
+<head>
+  <meta charset="UTF-8">
+  <title>Enter OTP</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Enter OTP sent to your email</h2>
+    <form method="POST" action="/verify-otp">
+      <input type="hidden" name="email" value="">
+      <input type="text" name="otp" placeholder="Enter OTP" required />
+      <button type="submit">Verify OTP</button>
+    </form>
+  </div>
+
+  <script>
+    // Set email value in hidden field from URL
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
+    if (email) {
+      document.querySelector('input[name="email"]').value = email;
+    }
+  </script>
+</body>
+</htm=
